@@ -26,6 +26,7 @@ The grades are from ("A-B-C-D-E")
 Javascript
 Git
 Github
+Html
 
 
 ## LIVE LINK
