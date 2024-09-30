@@ -5,7 +5,7 @@ function getGrade(marks) {
         
     } else if (marks >= 60 && marks <= 79) {
         return 'B';
-        
+    
     } else if (marks >=49 && marks <= 59) {
         return 'C';
         
@@ -16,7 +16,7 @@ function getGrade(marks) {
         return 'E';
         
     } else {
-        return null;
+        return 'null';
         
     } {
         
@@ -30,7 +30,7 @@ function getGrade(marks) {
     
 }
 // prompt user for input
-let input = ("Enter student marks (0, 100):");
+let input = prompt("Enter student marks (0, 100):");
 //convert input to number
 let marks = Number(input);
 
