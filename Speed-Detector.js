@@ -1,21 +1,25 @@
 function detectSpeed(speed) {
-    const speedLimit = 70;
+    let speedLimit = 70;
+    let demeritPoints = 0;
     const demeritPointMax = 12;
     if (speed < speedLimit) {
         console.log('Ok')
         
     } else {
         const excessSpeed = speed - speedLimit;
-        const demeritPoints = Math.floor(excessSpeed / 5);
+        demeritPoints = Math.floor(excessSpeed / 5);
+
+        console.log(`Points:${demeritPoints}`);
 
         if (demeritPoints > demeritPointMax) {
             console.log("License suspended");
             
-        } else {
-            console.log(`Points:${demeritPoints}`);
-            
-        }
         
     }
     
 }
+
+}
+const carSpeed = parseFloat(prompt("Enter the speed of the car:"));
+detectSpeed(carSpeed);
+
