@@ -32,5 +32,5 @@ Html
 ## LIVE LINK
 GITHUB(https://github.com/Basil-Tech-star/SA-01-WK-1-Code-Challenge)
 
-### License
-The content of this site is licensed under the MIT license Copyright (c) 2024
+# LICENSE
+ MIT license Copyright (c) 2024 Basil Wabuke
