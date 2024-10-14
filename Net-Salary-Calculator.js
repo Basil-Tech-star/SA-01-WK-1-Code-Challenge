@@ -22,18 +22,19 @@ function getNetSalary(basicsalary, benefits) {
     };
 
     const NSSFRate = 0.06; //6% of gross salary
+    // Paye salary ranges and rates
     const taxgroups = [
-        {limit: 24000, rate: 0.1}, // 10%
-        {limit: 32333, rate: 0.25}, // 25%
-        {limit: Infinity, rate: 0.3}, // 30%
+        {limit: 24000, rate: 0.1}, // 10% for income upto 24000
+        {limit: 32333, rate: 0.25}, // 25% for income between 24001 and 32333
+        {limit: Infinity, rate: 0.3}, // 30% for income above 32333
     ];
     // Gross salary
     const GrossSalary = basicsalary + benefits;
 
     // nhif deductions
-    const NHIFDeduction = 0;
+    let NHIFDeduction = 0;
     for (let limit in NHIFRates) {
-        if (GrossSalary = Number(limit)) break;
+        if (GrossSalary <= Number(limit)) break;
         NHIFDeduction = NHIFRates[limit];
  
     }
@@ -59,10 +60,6 @@ function getNetSalary(basicsalary, benefits) {
     let NetSalary = GrossSalary - (NSSFDeduction + NHIFDeduction + paye);
 
     //results
-    console.log(`Gross Salary: ksh ${GrossSalary.toFixed(2)}`);
-    console.log(`NHIF Deduction: ksh ${NHIFDeduction.toFixed(2)}`);
-    console.log(`NSSF Deduction: ksh ${NHIFDeduction.toFixed(2)}`);
-    console.log(`PAYE Tax: ksh ${paye.toFixed(2)}`);
 
     return NetSalary;
 
@@ -70,5 +67,4 @@ function getNetSalary(basicsalary, benefits) {
 // example usage
 const basicsalary = 70000;
 let benefits = 4000;
-console.log('NetSalary', getNetSalary(basicsalary, benefits));
 getNetSalary();
